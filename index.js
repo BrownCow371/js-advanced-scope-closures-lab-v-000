@@ -1,7 +1,11 @@
 
 function produceDrivingRange(blockRange){
   return function(block1, block2) {
-    let b1 = block1.replace("th", "");
-    return Math.abs(block1-block2) < blockRange;
+    let distance = Math.abs(block1.replace("th", "") - block2.replace("th", ""));
+    if(distance > blockRange){
+      return `${distance - blockRange} blocks out of range`;
+    } else {
+      return `within ${blockRange - distance}`
+    }
   };
 }

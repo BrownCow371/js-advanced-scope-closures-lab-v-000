@@ -1,6 +1,6 @@
 
-function produceDrivingRange(blocks){
+function produceDrivingRange(blockRange){
   return function(tripDistance) {
-    return tripDistance < blocks;
+    return tripDistance < blockRange;
   };
 }
